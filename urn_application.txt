@@ -1,0 +1,64 @@
+Namespace Registration for Self Addressing Identifiers
+
+Namespace Identifier:  said
+
+Version:  1
+
+Date:  2025-07-08
+
+Registrant: Sam Smith, ????? , Carly Huitema (coordinating)
+
+
+Purpose: 
+
+Self-Addressing Identifiers (SAIDs) are a special type of content-addressable identifier based on an encoded cryptographic digest that is self-referential. This proposal defines a method to unambiguously identify digital assets via their SAID identifier with the creation of the urn:said: namespace. These URNs are non-resolvable, serving as unique identifiers. 
+
+Syntax:
+
+A `said` URN shall consist of two mandatory in the following order, with `:` characters between each section.
+ 
+  - URN identifier (`urn:said`): REQUIRED
+
+  - SAID, in string representation (as per Composable Event Streaming Representation (CESR) version 0.9, section 11.6 and represented with Base64URLSafe alphabet of RFC 4648). REQUIRED
+
+
+The ABNF for a `said` URN is as follows:
+*Chat GPT assisted ABNF - NEEDS HELP FROM COMMUNITY:*
+said-urn = "urn:said:" said-digest
+said-digest = 43*86base64url-char
+              ; typically 256-bit digests (e.g., SHA-256) are 43-char base64url
+              ; higher sizes like SHA-512 would be longer
+base64url-char = ALPHA / DIGIT / "-" / "_"
+ALPHA = %x41-5A / %x61-7A ; A-Z / a-z
+DIGIT = %x30-39           ; 0-9
+
+EXAMPLES:
+
+  - `urn:said:HH9Zeft48ILoscZ2Y124eVxKxvq6A1JftwjLX9aP1Axe`
+  - `urn:said:EGHMmOQt7ZaAeAa_FiDhPE5qG4UGjK2TOCouMQfCaa7-`
+
+
+Assignment: 
+
+URNs conforming to this scheme are self-assigned, based on the derivation of the SAID (as per CESR version 0.9) described at: https://trustoverip.github.io/tswg-cesr-specification/#self-addressing-identifier-said
+
+Security and Privacy: 
+
+No known security or privacy issues exist for this URN namespace.
+
+Interoperability: 
+
+No known concerns or requirements around interoperability exist.
+
+Resolution:
+
+These URNs are non-resolvable and serve as globally unique identifiers. 
+
+Documentation: 
+
+https://trustoverip.github.io/tswg-cesr-specification/#self-addressing-identifier-said
+
+Additional Information:  NONE
+
+Revision Information:  N/A
+
