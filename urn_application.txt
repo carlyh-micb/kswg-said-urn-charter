@@ -21,6 +21,14 @@ A `said` URN shall consist of two mandatory components in the following order, w
 
   - SAID, in string representation as per Composable Event Streaming Representation (CESR) version 2.0, Section 11.6 and represented with Base64URLSafe alphabet of RFC 4648 (with the exception of `=` pad character which is not used in CESR). REQUIRED
 
+The ABNF of an `said` URN MUST be as follows:
+
+```ABNF
+said-urn = "urn:said:"said
+
+said = 1*(ALPHA / DIGIT / "-" / "_")
+```
+
 Examples:
 
   - `urn:said:E8wYuBjhslETYaLZcxMkWrhVbMcA8RS1pKYl7nJ77ntA`
