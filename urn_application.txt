@@ -4,10 +4,11 @@ Namespace Identifier:  said
 
 Version:  1
 
-Date:  2025-07-08
+Date:  2025-09-25
 
 Registrant: Sam Smith, Wenjing Chu, Carly Huitema
-
+on behalf of ToIP (Trust over IP)
+https://trustoverip.org/
 
 Purpose: 
 
